@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
+  --color-background: 247 251 255;
+  --color-foreground: 31 35 40;
+  --color-card: 243 248 255;
+  --color-border: 207 224 245;
+  --color-muted: 92 107 126;
+  --color-accent: 37 99 235;
+  --color-accent-soft: 219 234 254;
+  --color-success: 15 118 110;
+  --color-danger: 185 28 28;
+  --surface-panel: 255 255 255;
+  --surface-elevated: 237 245 255;
+  --shadow-panel: 0 18px 40px rgba(37, 99, 235, 0.10);
+  --shadow-modal: 0 30px 80px rgba(30, 64, 175, 0.16);
+  --app-loading-bg: linear-gradient(180deg, #f8fbff 0%, #edf5ff 100%);
+  --app-auth-bg:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 24%),
+    linear-gradient(180deg, #f8fbff 0%, #edf5ff 100%);
+  --app-shell-bg:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.14), transparent 22%),
+    linear-gradient(180deg, #f8fbff 0%, #edf5ff 100%);
+}
+
+:root[data-theme="dark"] {
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
+  --color-background: 10 15 26;
+  --color-foreground: 234 241 255;
+  --color-card: 17 25 40;
+  --color-border: 44 61 92;
+  --color-muted: 150 167 197;
+  --color-accent: 96 165 250;
+  --color-accent-soft: 31 45 72;
+  --color-success: 45 212 191;
+  --color-danger: 248 113 113;
+  --surface-panel: 14 23 38;
+  --surface-elevated: 19 31 50;
+  --shadow-panel: 0 22px 48px rgba(2, 8, 20, 0.42);
+  --shadow-modal: 0 30px 80px rgba(2, 8, 20, 0.52);
+  --app-loading-bg: linear-gradient(180deg, #0a0f1a 0%, #121a2b 100%);
+  --app-auth-bg:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 26%),
+    linear-gradient(180deg, #0a0f1a 0%, #121a2b 100%);
+  --app-shell-bg:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.14), transparent 22%),
+    linear-gradient(180deg, #0a0f1a 0%, #121a2b 100%);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.huha-loading-shell {
+  background-image: var(--app-loading-bg);
+}
+
+.huha-auth-shell {
+  background-image: var(--app-auth-bg);
+}
+
+.huha-app-shell {
+  background-image: var(--app-shell-bg);
+}
+
+.huha-glass {
+  background-color: rgb(var(--surface-panel) / 0.88);
+}
+
+.huha-surface {
+  background-color: rgb(var(--surface-panel) / 0.82);
+}
+
+.huha-surface-strong {
+  background-color: rgb(var(--surface-panel) / 0.92);
+}
+
+.huha-surface-muted {
+  background-color: rgb(var(--surface-elevated) / 0.78);
+}
+
+.huha-input {
+  background-color: rgb(var(--surface-panel));
+}
+
+.huha-modal-surface {
+  background-color: rgb(var(--color-background));
+  box-shadow: var(--shadow-modal);
+}
+
+@keyframes huha-overlay-in {
+  from {
+    background-color: rgba(2, 6, 23, 0);
+    opacity: 0;
+  }
+
+  to {
+    background-color: rgba(2, 6, 23, 0.38);
+    opacity: 1;
+  }
+}
+
+@keyframes huha-overlay-out {
+  from {
+    background-color: rgba(2, 6, 23, 0.38);
+    opacity: 1;
+  }
+
+  to {
+    background-color: rgba(2, 6, 23, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes huha-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes huha-modal-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+}
+
+.animate-overlay-in {
+  animation: huha-overlay-in 220ms ease-out both;
+}
+
+.animate-overlay-out {
+  animation: huha-overlay-out 220ms ease-in both;
+}
+
+.animate-modal-in {
+  animation: huha-modal-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-modal-out {
+  animation: huha-modal-out 220ms ease-in both;
+}

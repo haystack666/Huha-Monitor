@@ -1,0 +1,18 @@
+{
+  "name": "huha",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev:control-server": "pnpm --filter @huha/control-server dev",
+    "dev:web-console": "pnpm --filter @huha/web-console dev",
+    "build:control-server": "pnpm --filter @huha/control-server build",
+    "build:web-console": "pnpm --filter @huha/web-console build",
+    "build:probes": "sh ./scripts/build-probes.sh"
+  }
+}

@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/alert-dialog.tsx","./src/components/alert.tsx","./src/components/badge.tsx","./src/components/card.tsx","./src/features/dashboard/use-dashboard-data.ts","./src/lib/cn.ts","./vite.config.ts","./tailwind.config.ts"],"version":"5.9.3"}

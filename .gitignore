@@ -1,0 +1,15 @@
+node_modules
+dist
+.turbo
+.DS_Store
+.env
+coverage
+apps/web-console/dist
+apps/web-console/node_modules
+apps/control-server/node_modules
+packages/protocol/node_modules
+apps/probe-go/bin
+apps/probe-go/probe
+apps/probe-go/*.exe
+apps/control-server/assets/probes/*
+!apps/control-server/assets/probes/.gitkeep
